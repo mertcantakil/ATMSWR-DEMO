@@ -1,0 +1,64 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+thead th {
+  background-color: #f2f2f2;
+  border: 1px solid #eaeaea;
+  padding: 18px;
+}
+
+tbody td {
+  border: 1px solid #eeeeee;
+  padding: 8px;
+}
+
+tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+.detail-row td {
+  background-color: #f9f9f9;
+}
+
+.companySection {
+  padding-left: 0.5rem;
+  font-size: 13px;
+}
+
+.detail-body {
+  font-size: 13px;
+  padding: 10px;
+}
+
+.upIcon,
+.toggleIcon {
+  background-color: #ffffff;
+  border: 0;
+  height: 20px;
+  width: 20px;
+}
+
+.getDataBtn {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-top: 2rem;
+  padding-right: 1rem;
+}
+
+.getDataBtn>button {
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  background-color: #eaeaea;
+  padding: 10px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.paddingRightDetailText {
+  padding-right: 5px;
+}

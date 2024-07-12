@@ -1,0 +1,43 @@
+.capitalize {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.filter-form {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.input-with-search {
+  padding-left: 30px;
+  border: 1px solid #eaeaea;
+  height: 30px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.submitButton {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  background-color: #eaeaea;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
