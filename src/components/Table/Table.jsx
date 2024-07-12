@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { TABLE_CONS, TABLE_HEADER, ERROR_MESSAGE } from './constants';
 import { ImMoveUp } from "react-icons/im";
 import { FaCopy } from "react-icons/fa";
@@ -11,11 +11,20 @@ const Table = ({ filteredSource, getData }) => {
   const [expandedRows, setExpandedRows] = useState({});
   const [updatedData, setUpdatedData] = useState(filteredSource);
 
+  const arrangeData = useCallback((data) => {
+    return [...data].sort((a, b) => a.id - b.id);
+  }, []);
+
   const toggleRow = (id) => {
     setExpandedRows(prevState => ({
       [id]: !prevState[id]
     }));
   };
+
+  useEffect(() => {
+    setUpdatedData(filteredSource);
+    setExpandedRows({});
+  }, [filteredSource]);
 
   const moveRowUp = (id) => {
     const index = updatedData.findIndex(item => item.id === id);
@@ -32,9 +41,10 @@ const Table = ({ filteredSource, getData }) => {
       setUpdatedData(newData);
     }
   };
+
   const getDataAndCopy = () => {
-    const jsonData = JSON.stringify(updatedData, null, 2);
-    getData(updatedData);
+    const jsonData = JSON.stringify(arrangeData(updatedData), null, 2);
+    getData(arrangeData(updatedData));
     navigator.clipboard.writeText(jsonData)
       .then(() => {
         console.log('Coppied');
@@ -83,7 +93,7 @@ const Table = ({ filteredSource, getData }) => {
           </tr>
         </thead>
         <tbody>
-          {updatedData.map(user => (
+          {arrangeData(updatedData).map(user => (
             <React.Fragment key={user.id}>
               <tr>
                 <td>{user.id}</td>

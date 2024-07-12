@@ -33,7 +33,6 @@ const App = () => {
 
   const getData = updatedData => {
     console.log('referance object method: ', updatedData);
-    setFilteredSource(updatedData);
   };
 
   useEffect(() => {
